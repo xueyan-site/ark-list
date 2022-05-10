@@ -1,0 +1,39 @@
+{
+  "name": "xueyan-react-list",
+  "version": "1.0.0",
+  "author": "xueyan-site <xueyan@xueyan.site>",
+  "license": "LGPL-3.0",
+  "description": "TODO",
+  "main": "dist/node",
+  "types": "dist/def",
+  "module": "dist/web",
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "scripts": {
+    "start": "xt start",
+    "build": "xt build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.0"
+  },
+  "peerDependencies": {
+    "classnames": "^2.3.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": ">=16.8.0",
+    "classnames": "^2.3.0",
+    "react": ">=16.8.0",
+    "typescript": "^4.0.0"
+  }
+}
