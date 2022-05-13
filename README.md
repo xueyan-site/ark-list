@@ -1,10 +1,10 @@
 # xueyan-react-list
 
-TODO
+React list component
 
 ## Document
 
-TODO
+Please see <https://xueyan.site/xueyan-react-list>.
 
 ## Develop
 

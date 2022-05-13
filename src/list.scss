@@ -1,0 +1,38 @@
+.xrlist {
+  color: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  + .xrlist {
+    margin-top: 24px;
+  }
+  .main {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 0 8px 4px;
+  }
+  .label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .note {
+    flex: none;
+    color: var(--font2);
+    font-size: 14px;
+    margin-left: 8px;
+  }
+  .desc {
+    color: var(--font2);
+    font-size: 14px;
+    padding: 0 8px 4px;
+  }
+  .footer {
+    color: var(--font2);
+    font-size: 14px;
+    padding: 4px 8px 0;
+  }
+}
