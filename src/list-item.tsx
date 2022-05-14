@@ -28,7 +28,7 @@ export interface ListItemProps extends Record<string, any> {
   option?: React.ReactNode
   /** 箭头（可自定义） */
   arrow?: boolean | React.ReactNode
-  /** 内容 */
+  /** 自定义内容（label不传时，可顶替label的位置） */
   children?: React.ReactNode
   /** 错误信息 */
   error?: React.ReactNode
@@ -71,34 +71,39 @@ export function ListItem(props: ListItemProps) {
         }
       }}
     >
-      <div 
-        className={styles.tl} 
-        style={{ width: iconWidth }}
-      >{icon}</div>
+      <div className={styles.tl}>
+        {icon && (
+          <div className={styles.icon} style={{ width: iconWidth }}>
+            {icon}
+          </div>
+        )}
+      </div>
       <div className={styles.tr}>
         <div className={styles.info}>
-          {(label || note) && (
+          {label ? (
             <div className={styles.main}>
               <div className={styles.label}>{label}</div>
               {note && <div className={styles.note}>{note}</div>}
             </div>
-          )}
+          ) : children ? (
+            <div className={styles.children}>{children}</div>
+          ) : null}
           {desc && <div className={styles.desc}>{desc}</div>}
         </div>
         {option && <div className={styles.option}>{option}</div>}
-        {arrow && (
-          <div className={styles.arrow}>
-            {arrow !== true ? arrow : (
-              <DirectionIcon className={styles.arrowicon} direction='right'/>
-            )}
-          </div>
-        )}
+        <div className={styles.arrow}>
+          {arrow !== true ? arrow : (
+            <DirectionIcon className={styles.arrowicon} direction='right'/>
+          )}
+        </div>
       </div>
-      {(children || error) && (
+      {((children && label) || error) && (
         <Fragment>
           <div className={styles.bl}/>
           <div className={styles.br}>
-            {children && <div className={styles.children}>{children}</div>}
+            {(children && label) && (
+              <div className={styles.children}>{children}</div>
+            )}
             {error && <div className={styles.error}>{error}</div>}
           </div>
         </Fragment>

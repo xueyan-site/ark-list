@@ -63,15 +63,23 @@ export function List({
         style={style}
         className={cn(className, styles.xrlist)}
       >
-        {(label || note) && (
-          <div className={styles.main}>
-            <div className={styles.label}>{label}</div>
-            {note && <div className={styles.note}>{note}</div>}
+        {(label || desc) && (
+          <div className={styles.header}>
+            {label && (
+              <div className={styles.main}>
+                <div className={styles.label}>{label}</div>
+                {note && <div className={styles.note}>{note}</div>}
+              </div>
+            )}
+            {desc && <div className={styles.desc}>{desc}</div>}
           </div>
         )}
-        {desc && <div className={styles.desc}>{desc}</div>}
         {children}
-        {footer && <div className={styles.footer}>{footer}</div>}
+        {footer && (
+          <div className={styles.footer}>
+            <div className={styles.desc2}>{footer}</div>
+          </div>
+        )}
       </div>
     </ListItemPresetProvider>
   ) : null

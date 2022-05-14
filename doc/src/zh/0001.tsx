@@ -13,7 +13,7 @@ export default function Main() {
       <Segment>{MARK1}</Segment>
       <div>
         <List 
-          label="这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签" 
+          label="完整版本，这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签" 
           note="这是注释" 
           desc="这是说明这是说明这是说明这是说明这是说明这是说明这是说明这是说明这是说明这是说明这是说明" 
           footer="这是底部这是底部这是底部这是底部这是底部这是底部这是底部这是底部这是底部这是底部这是底部"
@@ -35,28 +35,8 @@ export default function Main() {
             这是内容
           </ListItem>
           <ListItem
-            icon={<img 
-              src={XT_PATH + 'favicon.png'}
-              style={{ width: '20px' }}
-            />}
-            label="这是标签"
-            arrow={true}
-            onClick={() => {
-              console.log('----')
-            }}
-          ></ListItem>
-          <ListItem
-            label="这是标签"
-            note="这是注释"
-            desc="这是说明"
-            arrow={true}
-          ></ListItem>
-          <ListItem
-            icon={<img 
-              src={XT_PATH + 'favicon.png'}
-              style={{ width: '20px' }}
-            />}
-            label="这是标签"
+            icon={<img src={XT_PATH + 'favicon.png'} style={{ width: '20px' }} />}
+            label="这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签"
             note="这是注释"
             desc="这是说明" 
             option="这是选项"
@@ -66,60 +46,52 @@ export default function Main() {
             这是内容
           </ListItem>
         </List>
-        <List 
-          label="这是标签" 
-          note="这是注释" 
-          desc="这是说明" 
-          footer="这是底部"
-        >
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-            note="这是注释"
-            desc="这是说明" 
-            option="这是选项"
-            error="这是错误信息"
-            arrow={true}
-          >
+        <List label="每一项单独罗列" footer="这是底部">
+          <ListItem icon={<SunIcon/>} arrow={true}>
             这是内容
           </ListItem>
         </List>
-        <List>
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-          ></ListItem>
+        <List note="这是注释">
+          <ListItem arrow={true}>
+            这是内容
+          </ListItem>
+        </List>
+        <List desc="这是说明">
+          <ListItem icon={<SunIcon/>}>
+            这是内容
+          </ListItem>
+        </List>
+        <List desc="这是说明">
+          <ListItem icon={<SunIcon/>} label="这是标签"/>
+        </List>
+        <List desc="这是说明" footer="这是底部">
+          <ListItem icon={<SunIcon/>} note="这是注释"/>
+        </List>
+        <List desc="这是说明">
+          <ListItem desc="这是说明"/>
+        </List>
+        <List desc="这是说明">
+          <ListItem option="这是选项"/>
         </List>
         <List>
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-          ></ListItem>
+          <ListItem option="这是选项"/>
+          <ListItem option="这是选项"/>
+          <ListItem option="这是选项"/>
         </List>
         <List>
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-            arrow={true}
-          ></ListItem>
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签"
-            arrow={true}
-          ></ListItem>
-        </List>
-        <List label="这是标签这是标签这是标签">
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-            arrow={true}
-          ></ListItem>
+          <ListItem arrow={true} error="这是错误信息"/>
         </List>
         <List>
-          <ListItem
-            icon={<SunIcon/>}
-            label="这是标签"
-          ></ListItem>
+          <ListItem arrow={true}/>
+          <ListItem arrow={true}/>
+          <ListItem arrow={true}/>
+          <ListItem arrow={true}/>
+        </List>
+        <List>
+          <ListItem arrow={true}/>
+        </List>
+        <List>
+          <ListItem arrow={true}/>
         </List>
       </div>
     </Article>
