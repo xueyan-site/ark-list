@@ -12,10 +12,8 @@
   font-weight: 400;
   -webkit-tap-highlight-color: transparent;
   background-color: var(--base1);
-  &.disabled {
-    .tl, .tr, .bl, .br {
-      opacity: .5;
-    }
+  &.disabled > * {
+    opacity: .5;
   }
   &:not(.disabled) {
     &.canclick:active {
@@ -56,7 +54,7 @@
     justify-content: center;
     flex-flow: row nowrap;
     box-sizing: content-box;
-    padding-right: 8px;
+    margin-right: 8px;
     height: 100%;
   }
   .info {
@@ -71,7 +69,6 @@
   .label {
     flex: 1;
     min-width: 0;
-    line-height: 1;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -79,47 +76,31 @@
   .note {
     flex: none;
     color: var(--font2);
-    font-size: 14px;
-    line-height: 1;
     margin-left: 8px;
   }
   .desc {
     color: var(--font2);
     font-size: 14px;
     line-height: 20px;
-    margin: 5px 0 -3px;
-    &:first-child {
-      margin-top: -3px;
-    }
   }
   .option {
     flex: none;
-    color: var(--main);
-    font-size: 14px;
-    line-height: 1;
-    padding-left: 8px;
+    color: var(--font2);
+    margin-left: 8px;
     display: flex;
   }
   .arrow {
     flex: none;
     color: var(--font2);
-    font-size: 14px;
-    line-height: 1;
-    padding-left: 8px;
+    margin-left: 8px;
     display: flex;
   }
   .children {
     font-size: 16px;
-    line-height: 24px;
-    margin: -4px 0;
   }
   .error {
     color: var(--red);
     font-size: 14px;
     line-height: 20px;
-    margin: 5px 0 -3px;
-    &:first-child {
-      margin-top: -3px;
-    }
   }
 }

@@ -3,58 +3,44 @@
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  &:not(:first-child) {
-    margin-top: 24px;
-    .header {
-      padding-top: 0;
+  + .xrlist {
+    margin-top: 36px;
+    &.hasheader {
+      margin-top: 24px;
     }
   }
-  &:not(:last-child) {
-    .footer {
-      padding-bottom: 0;
+  &.hasfooter + .xrlist {
+    margin-top: 24px;
+    &.hasheader {
+      margin-top: 16px;
     }
   }
   .header {
-    padding: 8px 16px;
+    padding: 5px 16px;
+    color: var(--font2);
+    font-size: 14px;
+    line-height: 20px;
   }
   .main {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
-  }
-  .label {
-    flex: 1;
-    min-width: 0;
-    color: var(--font1);
-    font-size: 14px;
-    line-height: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .note {
-    flex: none;
-    color: var(--font2);
-    font-size: 14px;
-    line-height: 1;
-    margin-left: 8px;
-  }
-  .desc {
-    color: var(--font2);
-    font-size: 14px;
-    line-height: 20px;
-    margin: 5px 0 -3px;
-    &:first-child {
-      margin-top: -3px;
+    .label {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .note {
+      flex: none;
+      margin-left: 8px;
     }
   }
   .footer {
-    padding: 8px 16px;
-  }
-  .desc2 {
+    padding: 5px 16px;
     color: var(--font2);
     font-size: 14px;
     line-height: 20px;
-    margin: -3px 0;
   }
 }

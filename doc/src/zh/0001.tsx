@@ -45,6 +45,33 @@ export default function Main() {
           >
             这是内容
           </ListItem>
+          <ListItem
+            icon={<img src={XT_PATH + 'favicon.png'} style={{ width: '20px' }} />}
+            label="这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签"
+            note="这是注释"
+            desc="这是说明" 
+            option="这是选项"
+            arrow={true}
+          ></ListItem>
+          <ListItem
+            icon={<img src={XT_PATH + 'favicon.png'} style={{ width: '20px' }} />}
+            label="这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签这是标签"
+            note="这是注释"
+            desc="这是说明" 
+            option="这是选项"
+            error="这是错误信息"
+            arrow={true}
+          ></ListItem>
+          <ListItem
+            icon={<img src={XT_PATH + 'favicon.png'} style={{ width: '20px' }} />}
+            note="这是注释"
+            desc="这是说明" 
+            option="这是选项"
+            error="这是错误信息"
+            arrow={true}
+          >
+            这是内容
+          </ListItem>
         </List>
         <List label="每一项单独罗列" footer="这是底部">
           <ListItem icon={<SunIcon/>} arrow={true}>

@@ -97,15 +97,16 @@ export function ListItem(props: ListItemProps) {
           )}
         </div>
       </div>
-      {((children && label) || error) && (
+      {(children && label) && (
         <Fragment>
-          <div className={styles.bl}/>
-          <div className={styles.br}>
-            {(children && label) && (
-              <div className={styles.children}>{children}</div>
-            )}
-            {error && <div className={styles.error}>{error}</div>}
-          </div>
+          <div/>
+          <div className={styles.children}>{children}</div>
+        </Fragment>
+      )}
+      {error && (
+        <Fragment>
+          <div/>
+          <div className={styles.error}>{error}</div>
         </Fragment>
       )}
     </div>

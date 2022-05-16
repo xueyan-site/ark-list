@@ -61,7 +61,12 @@ export function List({
     >
       <div
         style={style}
-        className={cn(className, styles.xrlist)}
+        className={cn(
+          className, 
+          styles.xrlist,
+          (label || desc) && styles.hasheader,
+          footer && styles.hasfooter
+        )}
       >
         {(label || desc) && (
           <div className={styles.header}>
@@ -75,11 +80,7 @@ export function List({
           </div>
         )}
         {children}
-        {footer && (
-          <div className={styles.footer}>
-            <div className={styles.desc2}>{footer}</div>
-          </div>
-        )}
+        {footer && <div className={styles.footer}>{footer}</div>}
       </div>
     </ListItemPresetProvider>
   ) : null
