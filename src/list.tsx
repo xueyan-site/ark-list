@@ -1,16 +1,18 @@
 import React from 'react'
 import cn from 'classnames'
 import styles from './list.scss'
-import { ListItemPresetProvider } from './contexts'
-import type { ListItemPreset } from './contexts'
+import { ListItemPresetProvider } from './list-item-preset'
+import type { ListItemPreset } from './list-item-preset'
 
 export interface ListProps extends
   Pick<ListItemPreset,
   | 'icon' 
   | 'iconWidth' 
   | 'option' 
-  | 'arrow' 
-  | 'disabled' 
+  | 'arrow'
+  | 'target'
+  | 'disabled'
+  | 'getHref'
   | 'onClick'
 > {
   /** 类名 */
@@ -44,44 +46,50 @@ export function List({
   iconWidth,
   option,
   arrow,
+  target,
   disabled,
+  getHref,
   onClick,
 }: ListProps) {
-  return children ? (
+  return (
     <ListItemPresetProvider
       value={{
         icon,
         iconWidth,
         option,
         arrow,
+        target,
         disabled,
+        getHref,
         onClick,
         ...preset,
       }}
     >
-      <div
-        style={style}
-        className={cn(
-          className, 
-          styles.xrlist,
-          (label || desc) && styles.hasheader,
-          footer && styles.hasfooter
-        )}
-      >
-        {(label || desc) && (
-          <div className={styles.header}>
-            {label && (
-              <div className={styles.main}>
-                <div className={styles.label}>{label}</div>
-                {note && <div className={styles.note}>{note}</div>}
-              </div>
-            )}
-            {desc && <div className={styles.desc}>{desc}</div>}
-          </div>
-        )}
-        {children}
-        {footer && <div className={styles.footer}>{footer}</div>}
-      </div>
+      {children && (
+        <div
+          style={style}
+          className={cn(
+            className,
+            styles.xrlist,
+            (label || desc) && styles.hasheader,
+            footer && styles.hasfooter
+          )}
+        >
+          {(label || desc) && (
+            <div className={styles.header}>
+              {label && (
+                <div className={styles.main}>
+                  <div className={styles.label}>{label}</div>
+                  {note && <div className={styles.note}>{note}</div>}
+                </div>
+              )}
+              {desc && <div className={styles.desc}>{desc}</div>}
+            </div>
+          )}
+          {children}
+          {footer && <div className={styles.footer}>{footer}</div>}
+        </div>  
+      )}
     </ListItemPresetProvider>
-  ) : null
+  )
 }

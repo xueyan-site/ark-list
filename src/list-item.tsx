@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { DirectionIcon } from 'xueyan-react-icon'
-import { useListItemPreset } from './contexts'
+import { useListItemPreset } from './list-item-preset'
 import styles from './list-item.scss'
 
 export type ListItemOnClick = (
   props: ListItemProps,
-  event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 ) => void
 
 export interface ListItemProps extends Record<string, any> {
@@ -34,6 +34,10 @@ export interface ListItemProps extends Record<string, any> {
   error?: React.ReactNode
   /** 禁止 */
   disabled?: boolean
+  /** 超链接跳转方式（默认_blank） */
+  target?: React.HTMLAttributeAnchorTarget
+  /** 超链接地址 */
+  href?: string
   /** 点击事件 */
   onClick?: ListItemOnClick
 }
@@ -54,19 +58,25 @@ export function ListItem(props: ListItemProps) {
     children,
     error,
     disabled,
+    target,
+    getHref,
     onClick
   } = currProps
+  const href = currProps.href || (getHref && getHref(currProps))
   return (
-    <div
+    <a
       style={style}
+      href={disabled ? undefined : href}
+      target={target}
       className={cn(
-        className, 
+        className,
         styles.xrlistitem,
         disabled && styles.disabled,
+        !disabled && href && styles.anchor,
         !disabled && onClick && styles.canclick
       )}
       onClick={event => {
-        if (onClick && !disabled) {
+        if (!disabled && !href && onClick) {
           onClick(currProps, event)
         }
       }}
@@ -109,6 +119,6 @@ export function ListItem(props: ListItemProps) {
           <div className={styles.error}>{error}</div>
         </Fragment>
       )}
-    </div>
+    </a>
   )
 }

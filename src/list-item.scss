@@ -1,4 +1,4 @@
-.xrlistitem {
+a.xrlistitem {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -12,15 +12,22 @@
   font-weight: 400;
   -webkit-tap-highlight-color: transparent;
   background-color: var(--base1);
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    color: inherit;
+  }
   &.disabled > * {
     opacity: .5;
   }
-  &:not(.disabled) {
-    &.canclick:active {
-      background-color: var(--area1);
-      +.xrlistitem .tr {
-        border-top-color: transparent;
-      }
+  &.anchor {
+    cursor: pointer;
+  }
+  &.canclick:active {
+    background-color: var(--area1);
+    +.xrlistitem .tr {
+      border-top-color: transparent;
     }
   }
   &+.canclick:active .tr {
