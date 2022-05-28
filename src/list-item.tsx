@@ -34,7 +34,7 @@ export interface ListItemProps extends Record<string, any> {
   error?: React.ReactNode
   /** 禁止 */
   disabled?: boolean
-  /** 超链接跳转方式（默认_blank） */
+  /** 超链接跳转方式（默认_self） */
   target?: React.HTMLAttributeAnchorTarget
   /** 超链接地址 */
   href?: string
@@ -42,9 +42,9 @@ export interface ListItemProps extends Record<string, any> {
   onClick?: ListItemOnClick
 }
 
-export function ListItem(props: ListItemProps) {
+export function ListItem(_props: ListItemProps) {
   const preset = useListItemPreset()
-  const currProps = { ...preset, ...props }
+  const props = { ...preset, ..._props }
   const {
     className,
     style,
@@ -61,8 +61,8 @@ export function ListItem(props: ListItemProps) {
     target,
     getHref,
     onClick
-  } = currProps
-  const href = currProps.href || (getHref && getHref(currProps))
+  } = props
+  const href = props.href || (getHref && getHref(props))
   return (
     <a
       style={style}
@@ -77,7 +77,7 @@ export function ListItem(props: ListItemProps) {
       )}
       onClick={event => {
         if (!disabled && !href && onClick) {
-          onClick(currProps, event)
+          onClick(props, event)
         }
       }}
     >
