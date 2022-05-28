@@ -73,7 +73,7 @@ export function ListItem(_props: ListItemProps) {
         styles.xrlistitem,
         disabled && styles.disabled,
         !disabled && href && styles.anchor,
-        !disabled && onClick && styles.canclick
+        !disabled && (onClick || href) && styles.canclick
       )}
       onClick={event => {
         if (!disabled && !href && onClick) {
