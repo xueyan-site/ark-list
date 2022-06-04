@@ -8,18 +8,18 @@ import type { ImageLinkProps, DocConfig } from 'xueyan-react-doc'
 import type { SelectOption } from 'xueyan-react-select'
 
 const ICON: ImageLinkProps = {
-  src: XT_PATH + 'project.png',
-  href: XT_PATH
+  src: XT_ASSETS_PATH + 'project.png',
+  href: XT_PUBLIC_PATH
 }
 
 const ICONS: ImageLinkProps[] = [
   {
-    src: XT_PATH + 'repository.png',
+    src: XT_ASSETS_PATH + 'repository.png',
     href: pkg.repository.url,
     title: 'repository',
   },
   {
-    src: XT_PATH + 'favicon.png',
+    src: XT_ASSETS_PATH + 'favicon.png',
     href: '/',
     title: 'website'
   }
@@ -62,14 +62,14 @@ export function PageDoc<T,D>({ page, ...other }: PageDocProps<T,D>) {
       versions={VERSIONS}
       languages={LANGUAGES}
       value={query.doc}
-      onChange={value => {
-        router.changeUrl(path, {
-          ...query,
-          doc: value
-        })
-      }}
       onChangeLanguage={value => {
         router.changeUrl(publicPath + value, query)
+      }}
+      getHref={option => {
+        return router.formatUrl(path, {
+          ...query,
+          doc: option.value
+        })
       }}
     >
       <Article>

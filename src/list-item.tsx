@@ -28,13 +28,13 @@ export interface ListItemProps extends Record<string, any> {
   option?: React.ReactNode
   /** 箭头（可自定义） */
   arrow?: boolean | React.ReactNode
-  /** 自定义内容（label不传时，可顶替label的位置） */
+  /** 自定义内容（label 不传时，会占据 label 的位置） */
   children?: React.ReactNode
   /** 错误信息 */
   error?: React.ReactNode
   /** 禁止 */
   disabled?: boolean
-  /** 超链接跳转方式（默认_self） */
+  /** 超链接跳转方式（默认 _self） */
   target?: React.HTMLAttributeAnchorTarget
   /** 超链接地址 */
   href?: string
