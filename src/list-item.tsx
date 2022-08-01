@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
-import { DirectionIcon } from 'xueyan-react-icon'
+import { DirectionIcon } from 'sicon'
 import { useListItemPreset } from './list-item-preset'
 import styles from './list-item.scss'
 

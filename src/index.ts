@@ -1,4 +1,4 @@
-import 'xueyan-react-style'
+import 'solor'
 
 export { List } from './list'
 export { ListItem } from './list-item'

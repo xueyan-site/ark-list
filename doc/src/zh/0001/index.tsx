@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Article, Segment } from 'xueyan-react-markdown'
 import { Playground } from 'xueyan-react-playground'
-import { List, ListItem } from 'xueyan-react-list'
+import { List, ListItem } from 'ark-list'
 import { SunIcon } from 'xueyan-react-icon'
 
 const MARK1 = `
@@ -10,7 +10,7 @@ const MARK1 = `
 
 const code1 = `
 import React from 'react'
-import { List, ListItem } from 'xueyan-react-list'
+import { List, ListItem } from 'ark-list'
 import { SunIcon } from 'xueyan-react-icon'
 
 export default function Example() {
@@ -50,7 +50,7 @@ export default function Example() {
 
 const code2 = `
 import React from 'react'
-import { List, ListItem } from 'xueyan-react-list'
+import { List, ListItem } from 'ark-list'
 import { SunIcon } from 'xueyan-react-icon'
 
 export default function Example() {
