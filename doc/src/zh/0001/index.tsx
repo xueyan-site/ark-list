@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Article, Segment } from 'xueyan-react-markdown'
-import { Playground } from 'xueyan-react-playground'
+import { Article, Segment } from 'ark-markdown'
+import { Playground } from 'ark-playground'
 import { List, ListItem } from 'ark-list'
-import { SunIcon } from 'xueyan-react-icon'
+import { SunIcon } from 'sicon'
 
 const MARK1 = `
 列表展示组件库，用于罗列列表数据，或展示设置项、菜单等场景。
@@ -11,7 +11,7 @@ const MARK1 = `
 const code1 = `
 import React from 'react'
 import { List, ListItem } from 'ark-list'
-import { SunIcon } from 'xueyan-react-icon'
+import { SunIcon } from 'sicon'
 
 export default function Example() {
   return (
@@ -51,7 +51,7 @@ export default function Example() {
 const code2 = `
 import React from 'react'
 import { List, ListItem } from 'ark-list'
-import { SunIcon } from 'xueyan-react-icon'
+import { SunIcon } from 'sicon'
 
 export default function Example() {
   return (
